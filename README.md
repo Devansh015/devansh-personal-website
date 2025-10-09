@@ -12,7 +12,6 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Projects**: Explore a curated list of my work and contributions.
 - **Blog**: Read articles and insights on various topics.
 - **Contact**: Find ways to get in touch or connect professionally.
-Your project is live at:
 
 ---
 
