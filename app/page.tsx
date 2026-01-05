@@ -232,8 +232,8 @@ export default function Portfolio() {
           </div>
           <ul className="space-y-3">
             <li>
-              <Link href="https://github.com/Devansh015/neuropharma-simlab" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
-                • Neuropharma-Simlab – Brain Simulation using Cellular Automata
+              <Link href="https://github.com/Devansh015/Tensorflow-CNN" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
+                • CNN made with Tensorflow
               </Link>
             </li>
             <li>
