@@ -214,7 +214,7 @@ export default function Portfolio() {
             </li>
             <li>
               <Link href="/blog/learning-relational-algebra" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
-                • Notes on Learning Linear Algebra
+                • My First Hackathon Experience
               </Link>
             </li>
           </ul>
