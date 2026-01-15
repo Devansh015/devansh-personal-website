@@ -32,10 +32,13 @@ export default function DegreeProgress({ theme }: DegreeProgressProps) {
   const progressBar = "█".repeat(filledBlocks) + "░".repeat(totalBlocks - filledBlocks)
 
   return (
-    <div className={`font-mono text-sm ${theme === "dark" ? "text-[#d4d4d4]" : "text-gray-700"}`}>
-      <span>
-        [{progressBar}] {progress.days} / {progress.total} days ({progress.percentage.toFixed(1)}%)
-      </span>
+    <div className={`text-sm ${theme === "dark" ? "text-[#d4d4d4]" : "text-gray-700"}`}>
+      <div className="flex items-center gap-2">
+        <span className="font-mono">
+          [{progressBar}]
+        </span>
+        <span className="font-mono">{progress.days} / {progress.total} days ({progress.percentage.toFixed(1)}%)</span>
+      </div>
     </div>
   )
 }

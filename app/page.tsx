@@ -43,6 +43,9 @@ export default function Portfolio() {
             <span>Hi, I'm</span>
             <TypewriterName/>
           </h2>
+          <div className={`mb-6 font-mono text-sm ${theme === "dark" ? "text-[#d4d4d4]" : "text-gray-700"}`}>
+            <DegreeProgress theme={theme} />
+          </div>
           <ul className="mb-6 space-y-2">
             <li>🎓 Third Year Computer Science Student @ Wilfrid Laurier University</li>
             <li>🧠 I enjoy building meaningful full-stack apps and exploring AI/ML </li>
@@ -247,14 +250,6 @@ export default function Portfolio() {
               </Link>
             </li>
           </ul>
-        </section>
-
-        {/* Degree Progress Section */}
-        <section className="mb-16">
-          <h2 className={`text-lg font-semibold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-            Degree Progress
-          </h2>
-          <DegreeProgress theme={theme} />
         </section>
 
         {/* Know More Section */}
