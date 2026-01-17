@@ -2,7 +2,7 @@
 
 Welcome to my personal website!  
 This sites main purpose is to showcase my projects, share my experiences, and provide ways to connect with me!!
-<img width="1710" height="984" alt="Screenshot 2026-01-16 at 10 20 41 PM" src="https://github.com/user-attachments/assets/6177fd89-62c0-4fb0-8b48-040de94eeb44" />
+<img width="1710" height="910" alt="Screenshot 2026-01-16 at 10 22 21 PM" src="https://github.com/user-attachments/assets/9fbdf52c-d899-4444-b502-fbc4faedf62b" />
 
 🔗 [Live Site](https://devanshjain.vercel.app/)
 
@@ -19,4 +19,5 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Deployment**: [Vercel](https://vercel.com/)
+
 
