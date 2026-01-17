@@ -33,7 +33,8 @@ export default function DegreeProgress({ theme }: DegreeProgressProps) {
 
   return (
     <div className={`text-sm ${theme === "dark" ? "text-[#d4d4d4]" : "text-gray-700"}`}>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
+        <span className="font-semibold min-w-fit">Degree Progress</span>
         <span className="font-mono">
           [{progressBar}]
         </span>
