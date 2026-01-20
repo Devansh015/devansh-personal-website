@@ -23,7 +23,7 @@ export default function Portfolio() {
     >
       <div className="max-w-[720px] mx-auto px-6 py-8">
         {/* Header */}
-        <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-16">
+        <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-10">
           <h1 className={`text-xl font-bold mb-4 sm:mb-0 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Devansh Jain
           </h1>
@@ -38,7 +38,7 @@ export default function Portfolio() {
         </header>
 
         {/* Introduction Section */}
-        <section className="mb-16">
+        <section className="mb-10">
           <h2 className={`text-4xl font-bold mb-4 flex items-baseline gap-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             <span>Hi, I'm</span>
             <TypewriterName/>
@@ -56,7 +56,7 @@ export default function Portfolio() {
         </section>
 
         {/* Experience Timeline Section */}
-        <section className="mb-16">
+        <section className="mb-10">
           <div className="flex justify-between items-center mb-6">
             <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Experience 
@@ -194,6 +194,35 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Recent Projects Section */}
+        <section className="mb-10">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+              Recent Projects
+            </h2>
+            <Link href="https://github.com/Devansh015?tab=repositories" className="text-sm hover:underline">
+              See all projects
+            </Link>
+          </div>
+          <ul className="space-y-3">
+            <li>
+              <Link href="https://github.com/Devansh015/Tensorflow-CNN" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
+                • CNN made with Tensorflow
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/Devansh015/wluNest-App" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
+                • wluNest – Student Housing Database
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/Devansh015/go-url-shortner" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
+                • URL Shortener – Fast & Minimal Link Tool in Go
+              </Link>
+            </li>
+          </ul>
+        </section>
+
         {/* Latest Posts Section */}
         <section className="mb-8">
           <div className="flex justify-between items-center mb-6">
@@ -223,37 +252,8 @@ export default function Portfolio() {
           </ul>
         </section>
 
-        {/* Recent Projects Section */}
-        <section className="mb-16">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-              Recent Projects
-            </h2>
-            <Link href="https://github.com/Devansh015?tab=repositories" className="text-sm hover:underline">
-              See all projects
-            </Link>
-          </div>
-          <ul className="space-y-3">
-            <li>
-              <Link href="https://github.com/Devansh015/Tensorflow-CNN" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
-                • CNN made with Tensorflow
-              </Link>
-            </li>
-            <li>
-              <Link href="https://github.com/Devansh015/wluNest-App" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
-                • wluNest – Student Housing Database
-              </Link>
-            </li>
-            <li>
-              <Link href="https://github.com/Devansh015/go-url-shortner" className={`block p-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
-                • URL Shortener – Fast & Minimal Link Tool in Go
-              </Link>
-            </li>
-          </ul>
-        </section>
-
         {/* Know More Section */}
-        <section className="mb-16">
+        <section className="mb-10">
           <h2 className={`text-lg font-semibold mb-6 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Let's Connect!
           </h2>
