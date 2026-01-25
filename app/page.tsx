@@ -35,11 +35,18 @@ export default function Portfolio() {
           </nav>
         </header>
 
+<<<<<<< HEAD
         {/* Introduction Section */}
         <section className="mb-10">
           <h2 className={`text-4xl font-bold mb-4 flex items-baseline gap-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             <span>Hi, I'm</span>
             <TypewriterName/>
+=======
+        {/* Introduction */}
+        <section className="mb-8">
+          <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+            Hi, I&apos;m <TypewriterName/>
+>>>>>>> 521f09b (fixed deployment issues)
           </h2>
           <p className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
             CS @ Wilfrid Laurier University · Full-stack & AI/ML · Film & Basketball 🏀
@@ -169,6 +176,7 @@ export default function Portfolio() {
           </div>
         </section>
 
+<<<<<<< HEAD
         {/* Recent Projects Section */}
         <section className="mb-10">
           <div className="flex justify-between items-center mb-6">
@@ -178,6 +186,30 @@ export default function Portfolio() {
             <Link href="https://github.com/Devansh015?tab=repositories" className="text-sm hover:underline">
               See all projects
             </Link>
+=======
+        {/* Posts & Projects Grid */}
+        <section className="mb-8 grid grid-cols-2 gap-4">
+          <div>
+            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+              Writing
+            </h3>
+            <ul className="space-y-1.5 text-sm">
+              <li><Link href="https://devanshjaiin.substack.com/p/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
+              <li><Link href="https://open.substack.com/pub/devanshjaiin/p/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
+              <li><Link href="https://substack.com/@devanshjaiin" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+              Projects
+            </h3>
+            <ul className="space-y-1.5 text-sm">
+              <li><Link href="https://github.com/Devansh015/Tensorflow-CNN" className="hover:underline">CNN with Tensorflow</Link></li>
+              <li><Link href="https://github.com/Devansh015/wluNest-App" className="hover:underline">wluNest Housing App</Link></li>
+              <li><Link href="https://github.com/Devansh015/go-url-shortner" className="hover:underline">Go URL Shortener</Link></li>
+              <li><Link href="https://github.com/Devansh015?tab=repositories" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
+            </ul>
+>>>>>>> 521f09b (fixed deployment issues)
           </div>
           <ul className="space-y-3">
             <li>
