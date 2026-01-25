@@ -15,29 +15,25 @@ export default function TypewriterName() {
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
-          // Typing
           if (currentIndex < currentName.length) {
             setDisplayText(currentName.substring(0, currentIndex + 1))
             setCurrentIndex(currentIndex + 1)
           } else {
-            // Finished typing, wait then start deleting
             setTimeout(() => setIsDeleting(true), 2000)
           }
         } else {
-          // Deleting
           if (currentIndex > 0) {
             setDisplayText(currentName.substring(0, currentIndex - 1))
             setCurrentIndex(currentIndex - 1)
           } else {
-            // Finished deleting, switch to next name
             setIsDeleting(false)
             setNameIndex((nameIndex + 1) % names.length)
             setCurrentIndex(0)
           }
         }
       },
-      isDeleting ? 100 : 150,
-    ) // Faster deletion, slower typing
+      isDeleting ? 80 : 120,
+    )
 
     return () => clearTimeout(timeout)
   }, [currentIndex, isDeleting, nameIndex, currentName])
@@ -45,7 +41,7 @@ export default function TypewriterName() {
   return (
     <span className="inline font-bold">
       {displayText}
-      <span className="animate-pulse">|</span>
+      <span className="animate-pulse opacity-70">|</span>
     </span>
   )
 }

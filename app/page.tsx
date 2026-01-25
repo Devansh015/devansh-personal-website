@@ -10,7 +10,6 @@ import { useCallback } from "react"
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
 
-  // Memoize scroll handler to prevent unnecessary re-renders
   const handleScrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }, [])
@@ -21,19 +20,18 @@ export default function Portfolio() {
         theme === "dark" ? "bg-[#0f0f0f] text-[#d4d4d4]" : "bg-white text-gray-900"
       }`}
     >
-      <div className="max-w-[720px] mx-auto px-6 py-8">
+      <div className="max-w-[600px] mx-auto px-5 py-6">
         {/* Header */}
         <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-10">
           <h1 className={`text-xl font-bold mb-4 sm:mb-0 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Devansh Jain
           </h1>
-          <nav className="text-sm space-x-4">
-            <Link href="https://substack.com/@devanshjaiin" className="hover:underline">
-              blog
-            </Link>
-            <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">
-              letterboxd
-            </Link>
+          <nav className="flex items-center gap-4 text-sm">
+            <Link href="https://substack.com/@devanshjaiin" className="hover:underline">blog</Link>
+            <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
+            <button onClick={toggleTheme} className="hover:opacity-70 transition-opacity" aria-label="Toggle theme">
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
           </nav>
         </header>
 
@@ -43,16 +41,10 @@ export default function Portfolio() {
             <span>Hi, I'm</span>
             <TypewriterName/>
           </h2>
-          <div className={`mb-6 font-mono text-sm ${theme === "dark" ? "text-[#d4d4d4]" : "text-gray-700"}`}>
-            <DegreeProgress theme={theme} />
-          </div>
-          <ul className="mb-6 space-y-2">
-            <li>🎓 Third Year Computer Science Student @ Wilfrid Laurier University</li>
-            <li>🧠 I enjoy building meaningful full-stack apps and exploring AI/ML </li>
-          </ul>
-          <p className="leading-relaxed">
-            In my spare time, I enjoy film, playing basketball, or going to the gym. Feel free to reach out!
+          <p className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+            CS @ Wilfrid Laurier University · Full-stack & AI/ML · Film & Basketball 🏀
           </p>
+          <DegreeProgress theme={theme} />
         </section>
 
         {/* Experience Timeline Section */}
@@ -165,32 +157,15 @@ export default function Portfolio() {
                     className="object-contain p-1"
                   />
                 </div>
-                <div className="ml-6 flex-grow">
-                  <div className="pt-0 pb-1 px-1 rounded-lg">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                      <div>
-                        <h3 className={`text-lg font-bold leading-tight ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-                          Software Engineering Intern
-                        </h3>
-                        <p className={`text-lg font-medium ${theme === "dark" ? "text-orange-400" : "text-orange-600"}`}>
-                          Accumine Technologies
-                        </p>
-                      </div>
-                      <span className={`text-sm font-medium px-3 py-1 rounded-full ${
-                        theme === "dark" 
-                          ? "bg-blue-900/30 text-blue-400 border border-blue-700" 
-                          : "bg-blue-50 text-blue-700 border border-blue-200"
-                      }`}>
-                        Sep 2022 - Dec 2022
-                      </span>
-                    </div>
-                    <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                      Toronto, Ontario
-                    </p>
+                <div className="flex-grow min-w-0">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className={`font-medium text-sm truncate ${theme === "dark" ? "text-white" : "text-gray-900"}`}>{exp.company}</p>
+                    <span className={`text-xs flex-shrink-0 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>{exp.date}</span>
                   </div>
+                  <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>{exp.role}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -281,24 +256,9 @@ export default function Portfolio() {
         </section>
 
         {/* Footer */}
-        <footer
-          className={`flex flex-col sm:flex-row sm:justify-between sm:items-center pt-8 border-t text-sm ${
-            theme === "dark" ? "border-gray-800" : "border-gray-200"
-          }`}
-        >
-          <div className="mb-4 sm:mb-0">© 2025 | Devansh Jain</div>
-          <div className="flex items-center space-x-4">
-            <button onClick={handleScrollToTop} className="hover:underline">
-              Back to the top
-            </button>
-            <button
-              onClick={toggleTheme}
-              className="hover:underline transition-all duration-200"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </button>
-          </div>
+        <footer className={`flex justify-between items-center pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>
+          <span>© 2025 Devansh Jain</span>
+          <button onClick={handleScrollToTop} className="hover:underline">↑ top</button>
         </footer>
       </div>
     </div>
