@@ -2,7 +2,7 @@
 
 Welcome to my personal website!  
 This sites main purpose is to showcase my projects, share my experiences, and provide ways to connect with me!!
-<img width="1710" height="979" alt="Screenshot 2025-07-22 at 11 48 12 AM" src="https://github.com/user-attachments/assets/fb512d27-382e-4a3d-8541-116f3605bdcf" />
+<img width="1710" height="910" alt="Screenshot 2026-01-16 at 10 22 21 PM" src="https://github.com/user-attachments/assets/9fbdf52c-d899-4444-b502-fbc4faedf62b" />
 
 🔗 [Live Site](https://devanshjain.vercel.app/)
 
@@ -12,7 +12,6 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Projects**: Explore a curated list of my work and contributions.
 - **Blog**: Read articles and insights on various topics.
 - **Contact**: Find ways to get in touch or connect professionally.
-
 ---
 
 ## Tech Stack
@@ -20,4 +19,5 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Deployment**: [Vercel](https://vercel.com/)
+
 
