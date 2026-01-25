@@ -61,32 +61,15 @@ export default function Portfolio() {
                 <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-white border flex items-center justify-center overflow-hidden ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                   <Image src={exp.img} alt={exp.company} width={32} height={32} className="object-contain" />
                 </div>
-                <div className="ml-6 flex-grow">
-                  <div className="pt-0 pb-1 px-1 rounded-lg">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                      <div>
-                        <h3 className={`text-lg font-bold leading-tight ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-                          Junior Developer
-                        </h3>
-                        <p className={`text-lg font-medium ${theme === "dark" ? "text-orange-400" : "text-orange-600"}`}>
-                          Accumine Technologies
-                        </p>
-                      </div>
-                      <span className={`text-sm font-medium px-3 py-1 rounded-full ${
-                        theme === "dark" 
-                          ? "bg-blue-900/30 text-blue-400 border border-blue-700" 
-                          : "bg-blue-50 text-blue-700 border border-blue-200"
-                      }`}>
-                        Sep 2023 - Apr 2024
-                      </span>
-                    </div>
-                    <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-                      Waterloo, Ontario
-                    </p>
+                <div className="flex-grow min-w-0">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className={`font-medium text-sm truncate ${theme === "dark" ? "text-white" : "text-gray-900"}`}>{exp.company}</p>
+                    <span className={`text-xs flex-shrink-0 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>{exp.date}</span>
                   </div>
+                  <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>{exp.role}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
