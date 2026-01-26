@@ -5,14 +5,9 @@ import Image from "next/image"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
-import { useCallback } from "react"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
-
-  const handleScrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
 
   return (
     <div
@@ -113,9 +108,8 @@ export default function Portfolio() {
         </section>
 
         {/* Footer */}
-        <footer className={`flex justify-between items-center pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>
+        <footer className={`pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>
           <span>© 2025 Devansh Jain</span>
-          <button onClick={handleScrollToTop} className="hover:underline">↑ top</button>
         </footer>
       </div>
     </div>
