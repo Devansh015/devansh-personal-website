@@ -43,7 +43,7 @@ export default function Portfolio() {
 
         {/* Experience */}
         <section className="mb-8">
-          <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+          <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
             Experience
           </h3>
           <div className="space-y-3">
@@ -71,7 +71,7 @@ export default function Portfolio() {
         {/* Posts & Projects Grid */}
         <section className="mb-8 grid grid-cols-2 gap-4">
           <div>
-            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
               Writing
             </h3>
             <ul className="space-y-1.5 text-sm">
@@ -81,7 +81,7 @@ export default function Portfolio() {
             </ul>
           </div>
           <div>
-            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
               Projects
             </h3>
             <ul className="space-y-1.5 text-sm">
@@ -95,7 +95,7 @@ export default function Portfolio() {
 
         {/* Connect */}
         <section className="mb-6">
-          <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+          <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
             Connect
           </h3>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
