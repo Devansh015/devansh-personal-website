@@ -99,12 +99,12 @@ export default function Portfolio() {
           <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
             Connect
           </h3>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
             <Link href="mailto:devansh_jain@outlook.com" className="hover:underline">email</Link>
             <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
             <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
             <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
-            <Link href="/2025Resume.pdf" className="hover:underline">resume</Link>
+            <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
           </div>
         </section>
 
