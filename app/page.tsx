@@ -77,6 +77,7 @@ export default function Portfolio() {
             <ul className="space-y-1.5 text-sm">
               <li><Link href="https://devanshjaiin.substack.com/p/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
               <li><Link href="https://open.substack.com/pub/devanshjaiin/p/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
+              <li><Link href="https://devanshjaiin.substack.com/p/my-first-hackathon" className="hover:underline">My first hackathon</Link></li>
               <li><Link href="https://substack.com/@devanshjaiin" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
