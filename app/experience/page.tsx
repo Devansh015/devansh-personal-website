@@ -35,7 +35,7 @@ const ExperienceCard = memo(({
           {experience.company}
         </p>
       </div>
-      <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-black"} mt-2 sm:mt-0 sm:text-right`}>
+      <div className={`text-sm ${theme === "dark" ? "text-white" : "text-black"} mt-2 sm:mt-0 sm:text-right`}>
         <p className="font-medium">{experience.duration}</p>
         <p>{experience.location}</p>
       </div>

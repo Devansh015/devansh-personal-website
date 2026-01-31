@@ -59,7 +59,7 @@ export default function Portfolio() {
                 <div className="flex-grow min-w-0">
                   <div className="flex items-center justify-between gap-2">
                     <p className={`font-medium text-sm truncate ${theme === "dark" ? "text-white" : "text-gray-900"}`}>{exp.company}</p>
-                    <span className={`text-xs flex-shrink-0 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>{exp.date}</span>
+                    <span className={`text-xs flex-shrink-0 ${theme === "dark" ? "text-white" : "text-black"}`}>{exp.date}</span>
                   </div>
                   <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>{exp.role}</p>
                 </div>
