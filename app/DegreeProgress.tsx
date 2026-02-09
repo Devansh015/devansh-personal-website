@@ -44,7 +44,7 @@ export default function DegreeProgress({ theme }: DegreeProgressProps) {
           />
         </span>
         <span>]</span>
-        <span>{progress.percentage.toFixed(0)}%</span>
+        <span>{progress.percentage.toFixed(0)}% complete</span>
       </span>
     </div>
   )
