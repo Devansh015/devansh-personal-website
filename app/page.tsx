@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import Script from "next/script"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
@@ -107,6 +108,69 @@ export default function Portfolio() {
             <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
           </div>
         </section>
+        {/* CS Webring Widget */}
+        <div className="mb-6 flex items-center gap-2">
+          {/* Left Arrow */}
+          <a
+            href="https://cs-webring.vercel.app/prev?from=devanshjain.me"
+            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
+              theme === "dark"
+                ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
+                : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+            }`}
+            title="Previous site"
+          >
+            ←
+          </a>
+          
+          {/* Hawk Logo */}
+          <a
+            href="https://cs-webring.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all hover:scale-110 ${
+              theme === "dark"
+                ? "bg-[#4b2e83] hover:bg-[#5a3a9a]"
+                : "bg-[#4b2e83] hover:bg-[#5a3a9a]"
+            }`}
+            title="CS Webring"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C9.5 2 7.5 3.5 7 5.5C6 5 4.5 5.5 3.5 6.5C2.5 7.5 2.5 9 3 10C2 11 1.5 12.5 2 14C2.5 15.5 4 16.5 5.5 16.5L8 20C8.5 21 9.5 21.5 10.5 21.5H13.5C14.5 21.5 15.5 21 16 20L18.5 16.5C20 16.5 21.5 15.5 22 14C22.5 12.5 22 11 21 10C21.5 9 21.5 7.5 20.5 6.5C19.5 5.5 18 5 17 5.5C16.5 3.5 14.5 2 12 2Z"
+                fill="#FDB913"
+                stroke="#FDB913"
+                strokeWidth="1"
+              />
+              <circle cx="9" cy="9" r="1.5" fill="#4b2e83" />
+              <circle cx="15" cy="9" r="1.5" fill="#4b2e83" />
+              <path
+                d="M9 13C9 13 10.5 15 12 15C13.5 15 15 13 15 13"
+                stroke="#4b2e83"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </a>
+          
+          {/* Right Arrow */}
+          <a
+            href="https://cs-webring.vercel.app/next?from=devanshjain.me"
+            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
+              theme === "dark"
+                ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
+                : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+            }`}
+            title="Next site"
+          >
+            →
+          </a>
+        </div>
 
         {/* Footer */}
         <footer className={`pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>

@@ -27,11 +27,15 @@ export default function DegreeProgress({ theme }: DegreeProgressProps) {
 
   const totalBlocks = 16
   const filledBlocks = Math.round((progress.percentage / 100) * totalBlocks)
-  const progressBar = "█".repeat(filledBlocks) + "░".repeat(totalBlocks - filledBlocks)
 
   return (
     <div className={`text-xs font-mono ${theme === "dark" ? "text-white" : "text-black"}`}>
-      <span>degree progress [{progressBar}] {progress.percentage.toFixed(0)}%</span>
+      <span>degree progress [</span>
+      <span className="inline-flex" style={{ width: `${totalBlocks}ch` }}>
+        {"█".repeat(filledBlocks)}
+        {"░".repeat(totalBlocks - filledBlocks)}
+      </span>
+      <span>] {progress.percentage.toFixed(0)}%</span>
     </div>
   )
 }
