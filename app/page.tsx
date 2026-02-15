@@ -3,12 +3,94 @@
 import Link from "next/link"
 import Image from "next/image"
 import Script from "next/script"
+import { useEffect, useState } from "react"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
+  const [prevUrl, setPrevUrl] = useState<string>("https://cs-webring.pages.dev/prev?from=devanshjain.vercel.app")
+  const [nextUrl, setNextUrl] = useState<string>("https://cs-webring.pages.dev/next?from=devanshjain.vercel.app")
+
+  useEffect(() => {
+    const membersUrl = "https://cs-webring.pages.dev/data/members.json"
+    let cancelled = false
+
+    async function load() {
+      try {
+        const res = await fetch(membersUrl)
+        if (!res.ok) return
+        const data: any = await res.json()
+        if (!Array.isArray(data) || data.length === 0) return
+
+        const hostname = typeof window !== "undefined" ? window.location.hostname.replace(/^www\./, "") : ""
+        const n = data.length
+
+        const getCandidateUrl = (item: any) => {
+          const keys = ["website", "url", "site", "href", "link", "domain"]
+          for (const k of keys) {
+            if (item && item[k]) return String(item[k]).trim()
+          }
+          return null
+        }
+
+        const normalize = (u: string | null) => {
+          if (!u) return null
+          try {
+            const url = new URL(u)
+            return url.href.replace(/\/$/, "")
+          } catch (e) {
+            // not a full URL, return raw trimmed string
+            return String(u).replace(/\/$/, "")
+          }
+        }
+
+        const matches = data.map((m: any) => {
+          const cand = normalize(getCandidateUrl(m))
+          if (!cand) return false
+          try {
+            const h = new URL(cand).hostname.replace(/^www\./, "")
+            return h === hostname
+          } catch (e) {
+            return hostname && cand.includes(hostname)
+          }
+        })
+
+        let idx = matches.indexOf(true)
+        if (idx === -1) {
+          // fallback: try match by a site URL or name containing 'devansh' (local/dev testing)
+          idx = data.findIndex((m: any) => {
+            const cand = normalize(getCandidateUrl(m)) || ""
+            if (hostname && cand.includes(hostname)) return true
+            const name = (m && m.name) ? String(m.name).toLowerCase() : ""
+            if (name.includes("devansh")) return true
+            if (cand.toLowerCase().includes("devansh")) return true
+            return false
+          })
+        }
+
+        if (idx === -1) return
+
+        const prev = data[(idx - 1 + n) % n]
+        const next = data[(idx + 1) % n]
+        const prevHref = normalize(getCandidateUrl(prev)) || `https://cs-webring.pages.dev/prev?from=${hostname}`
+        const nextHref = normalize(getCandidateUrl(next)) || `https://cs-webring.pages.dev/next?from=${hostname}`
+
+        if (!cancelled) {
+          setPrevUrl(prevHref)
+          setNextUrl(nextHref)
+        }
+      } catch (e) {
+        // fail silently and keep fallbacks
+      }
+    }
+
+    load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   return (
     <div
@@ -110,9 +192,14 @@ export default function Portfolio() {
         </section>
         {/* CS Webring Widget */}
         <div className="mb-6 flex items-center gap-2">
+          {/* Left/Right links are computed from the Cloudflare members.json */}
+          {/* We'll fetch members.json at runtime and compute prev/next URLs. */}
+          
           {/* Left Arrow */}
           <a
-            href="https://cs-webring.vercel.app/prev?from=devanshjain.me"
+            href={prevUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
               theme === "dark"
                 ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
@@ -125,7 +212,7 @@ export default function Portfolio() {
           
           {/* Hawk Logo */}
           <a
-            href="https://cs-webring.vercel.app"
+            href="https://cs-webring.pages.dev"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center w-10 h-10 rounded-full transition-all hover:scale-110 ${
@@ -160,7 +247,9 @@ export default function Portfolio() {
           
           {/* Right Arrow */}
           <a
-            href="https://cs-webring.vercel.app/next?from=devanshjain.me"
+            href={nextUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
               theme === "dark"
                 ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
