@@ -119,7 +119,7 @@ export default function Portfolio() {
             Hi, I&apos;m <TypewriterName/>
           </h2>
           <p className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-            Wilfrid Laurier University · Full-stack &amp; AI/ML · Film &amp; Basketball 🏀
+            CS@ Wilfrid Laurier University · Full-stack &amp; AI/ML · Film &amp; Basketball 🏀
           </p>
           <DegreeProgress theme={theme} />
         </section>
