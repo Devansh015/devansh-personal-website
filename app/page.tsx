@@ -2,95 +2,12 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
-import { useEffect, useState } from "react"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
-  const [prevUrl, setPrevUrl] = useState<string>("https://cs-webring.pages.dev/prev?from=devanshjain.vercel.app")
-  const [nextUrl, setNextUrl] = useState<string>("https://cs-webring.pages.dev/next?from=devanshjain.vercel.app")
-
-  useEffect(() => {
-    const membersUrl = "https://cs-webring.pages.dev/data/members.json"
-    let cancelled = false
-
-    async function load() {
-      try {
-        const res = await fetch(membersUrl)
-        if (!res.ok) return
-        const data: any = await res.json()
-        if (!Array.isArray(data) || data.length === 0) return
-
-        const hostname = typeof window !== "undefined" ? window.location.hostname.replace(/^www\./, "") : ""
-        const n = data.length
-
-        const getCandidateUrl = (item: any) => {
-          const keys = ["website", "url", "site", "href", "link", "domain"]
-          for (const k of keys) {
-            if (item && item[k]) return String(item[k]).trim()
-          }
-          return null
-        }
-
-        const normalize = (u: string | null) => {
-          if (!u) return null
-          try {
-            const url = new URL(u)
-            return url.href.replace(/\/$/, "")
-          } catch (e) {
-            // not a full URL, return raw trimmed string
-            return String(u).replace(/\/$/, "")
-          }
-        }
-
-        const matches = data.map((m: any) => {
-          const cand = normalize(getCandidateUrl(m))
-          if (!cand) return false
-          try {
-            const h = new URL(cand).hostname.replace(/^www\./, "")
-            return h === hostname
-          } catch (e) {
-            return hostname && cand.includes(hostname)
-          }
-        })
-
-        let idx = matches.indexOf(true)
-        if (idx === -1) {
-          // fallback: try match by a site URL or name containing 'devansh' (local/dev testing)
-          idx = data.findIndex((m: any) => {
-            const cand = normalize(getCandidateUrl(m)) || ""
-            if (hostname && cand.includes(hostname)) return true
-            const name = (m && m.name) ? String(m.name).toLowerCase() : ""
-            if (name.includes("devansh")) return true
-            if (cand.toLowerCase().includes("devansh")) return true
-            return false
-          })
-        }
-
-        if (idx === -1) return
-
-        const prev = data[(idx - 1 + n) % n]
-        const next = data[(idx + 1) % n]
-        const prevHref = normalize(getCandidateUrl(prev)) || `https://cs-webring.pages.dev/prev?from=${hostname}`
-        const nextHref = normalize(getCandidateUrl(next)) || `https://cs-webring.pages.dev/next?from=${hostname}`
-
-        if (!cancelled) {
-          setPrevUrl(prevHref)
-          setNextUrl(nextHref)
-        }
-      } catch (e) {
-        // fail silently and keep fallbacks
-      }
-    }
-
-    load()
-    return () => {
-      cancelled = true
-    }
-  }, [])
 
   return (
     <div
@@ -190,75 +107,17 @@ export default function Portfolio() {
             <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
           </div>
         </section>
-        {/* CS Webring Widget */}
+        {/* CS Webring */}
         <div className="mb-6 flex items-center gap-2">
-          {/* Left/Right links are computed from the Cloudflare members.json */}
-          {/* We'll fetch members.json at runtime and compute prev/next URLs. */}
-          
-          {/* Left Arrow */}
-          <a
-            href={prevUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
-              theme === "dark"
-                ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
-                : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-            }`}
-            title="Previous site"
-          >
-            ←
+          <a href="https://cs-webring.vercel.app/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=prev">&#8592;</a>
+          <a href="https://cs-webring.vercel.app/">
+            <img
+              src={theme === "dark" ? "https://cs-webring.vercel.app/icon.white.svg" : "https://cs-webring.vercel.app/icon.black.svg"}
+              alt="CS Webring"
+              style={{ width: 24, height: "auto", opacity: 0.8 }}
+            />
           </a>
-          
-          {/* Hawk Logo */}
-          <a
-            href="https://cs-webring.pages.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all hover:scale-110 ${
-              theme === "dark"
-                ? "bg-[#4b2e83] hover:bg-[#5a3a9a]"
-                : "bg-[#4b2e83] hover:bg-[#5a3a9a]"
-            }`}
-            title="CS Webring"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2C9.5 2 7.5 3.5 7 5.5C6 5 4.5 5.5 3.5 6.5C2.5 7.5 2.5 9 3 10C2 11 1.5 12.5 2 14C2.5 15.5 4 16.5 5.5 16.5L8 20C8.5 21 9.5 21.5 10.5 21.5H13.5C14.5 21.5 15.5 21 16 20L18.5 16.5C20 16.5 21.5 15.5 22 14C22.5 12.5 22 11 21 10C21.5 9 21.5 7.5 20.5 6.5C19.5 5.5 18 5 17 5.5C16.5 3.5 14.5 2 12 2Z"
-                fill="#FDB913"
-                stroke="#FDB913"
-                strokeWidth="1"
-              />
-              <circle cx="9" cy="9" r="1.5" fill="#4b2e83" />
-              <circle cx="15" cy="9" r="1.5" fill="#4b2e83" />
-              <path
-                d="M9 13C9 13 10.5 15 12 15C13.5 15 15 13 15 13"
-                stroke="#4b2e83"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          </a>
-          
-          {/* Right Arrow */}
-          <a
-            href={nextUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all hover:scale-110 ${
-              theme === "dark"
-                ? "bg-gray-800 hover:bg-gray-700 text-gray-300"
-                : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-            }`}
-            title="Next site"
-          >
-            →
-          </a>
+          <a href="https://cs-webring.vercel.app/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=next">&#8594;</a>
         </div>
 
         {/* Footer */}
