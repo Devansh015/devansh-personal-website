@@ -36,7 +36,7 @@ export default function Portfolio() {
             Hi, I&apos;m <TypewriterName/>
           </h2>
           <p className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-            CS @ Wilfrid Laurier University · Full-stack &amp; AI/ML · Film &amp; Basketball 🏀
+            CS @ Wilfrid Laurier University · Full-Stack &amp; AI/ML · Film &amp; Basketball 🏀
           </p>
           <DegreeProgress theme={theme} />
         </section>
@@ -86,9 +86,9 @@ export default function Portfolio() {
               Projects
             </h3>
             <ul className="space-y-1.5 text-sm">
-              <li><Link href="https://github.com/Devansh015/Tensorflow-CNN" className="hover:underline">CNN with Tensorflow</Link></li>
-              <li><Link href="https://github.com/Devansh015/wluNest-App" className="hover:underline">wluNest Housing App</Link></li>
-              <li><Link href="https://github.com/Devansh015/go-url-shortner" className="hover:underline">Go URL Shortener</Link></li>
+              <li><Link href="https://github.com/Devansh015/Amplify" className="hover:underline">Amplify - UofTHacks</Link></li>
+              <li><Link href="https://github.com/Devansh015/Cortex" className="hover:underline">Cortex - HackCanada</Link></li>
+              <li><Link href="https://github.com/Devansh015/UTRA" className="hover:underline">R2Detour - UTRAHacks</Link></li>
               <li><Link href="https://github.com/Devansh015?tab=repositories" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
