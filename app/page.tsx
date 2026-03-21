@@ -97,7 +97,7 @@ export default function Portfolio() {
         {/* Connect */}
         <section className="mb-6">
           <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
-            Connect
+            Connect with Me!
           </h3>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
             <Link href="mailto:devansh_jain@outlook.com" className="hover:underline">email</Link>
