@@ -122,7 +122,7 @@ export default function Portfolio() {
 
         {/* Footer */}
         <footer className={`pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>
-          <span>© 2025 Devansh Jain</span>
+          <span>© 2026 Devansh Jain</span>
         </footer>
       </div>
     </div>
