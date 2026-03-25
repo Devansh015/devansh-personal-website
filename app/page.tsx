@@ -109,15 +109,15 @@ export default function Portfolio() {
         </section>
         {/* CS Webring */}
         <div className="mb-6 flex items-center gap-2">
-          <a href="https://cs-webring.vercel.app/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=prev">&#8592;</a>
-          <a href="https://cs-webring.vercel.app/">
+          <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=prev">&#8592;</a>
+          <a href="https://wluring.com/">
             <img
-              src={theme === "dark" ? "https://cs-webring.vercel.app/icon.white.svg" : "https://cs-webring.vercel.app/icon.black.svg"}
+              src={theme === "dark" ? "https://wluring.com/icon.white.svg" : "https://wluring.com/icon.black.svg"}
               alt="CS Webring"
               style={{ width: 24, height: "auto", opacity: 0.8 }}
             />
           </a>
-          <a href="https://cs-webring.vercel.app/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=next">&#8594;</a>
+          <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=next">&#8594;</a>
         </div>
 
         {/* Footer */}
