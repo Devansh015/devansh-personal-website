@@ -16,7 +16,8 @@ export default function Portfolio() {
   useEffect(() => {
     let animationFrame: number | null = null
     let countTimeout: ReturnType<typeof setTimeout> | null = null
-    let badgeTimeout: ReturnType<typeof setTimeout> | null = null
+    let fadeTimeout: ReturnType<typeof setTimeout> | null = null
+    let hideTimeout: ReturnType<typeof setTimeout> | null = null
     let isMounted = true
 
     fetch("/api/views", { method: "POST" })
@@ -42,12 +43,17 @@ export default function Portfolio() {
           }
         }, 850)
 
-        badgeTimeout = setTimeout(() => {
+        fadeTimeout = setTimeout(() => {
           if (isMounted) {
             setAnimateViewIncrement(false)
+          }
+        }, 1200)
+
+        hideTimeout = setTimeout(() => {
+          if (isMounted) {
             setShowViewIncrement(false)
           }
-        }, 1400)
+        }, 3400)
       })
       .catch(() => {})
 
@@ -62,8 +68,12 @@ export default function Portfolio() {
         clearTimeout(countTimeout)
       }
 
-      if (badgeTimeout) {
-        clearTimeout(badgeTimeout)
+      if (fadeTimeout) {
+        clearTimeout(fadeTimeout)
+      }
+
+      if (hideTimeout) {
+        clearTimeout(hideTimeout)
       }
     }
   }, [])
@@ -83,14 +93,10 @@ export default function Portfolio() {
                 <span>{views.toLocaleString()} views</span>
                 {showViewIncrement && (
                   <span
-                    className={`rounded-full px-1.5 py-0.5 text-[9px] font-semibold transition-all duration-700 ${
-                      theme === "dark"
-                        ? "bg-emerald-500/15 text-emerald-300"
-                        : "bg-emerald-100 text-emerald-700"
+                    className={`text-[11px] font-normal tracking-normal transition-opacity duration-[2200ms] ease-out ${
+                      theme === "dark" ? "text-gray-500" : "text-gray-400"
                     } ${
-                      animateViewIncrement
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-1 opacity-0"
+                      animateViewIncrement ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     +1
