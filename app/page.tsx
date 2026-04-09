@@ -10,12 +10,62 @@ import { useTheme } from "./ThemeProvider"
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
   const [views, setViews] = useState<number | null>(null)
+  const [showViewIncrement, setShowViewIncrement] = useState(false)
+  const [animateViewIncrement, setAnimateViewIncrement] = useState(false)
 
   useEffect(() => {
+    let animationFrame: number | null = null
+    let countTimeout: ReturnType<typeof setTimeout> | null = null
+    let badgeTimeout: ReturnType<typeof setTimeout> | null = null
+    let isMounted = true
+
     fetch("/api/views", { method: "POST" })
       .then((res) => res.json())
-      .then((data) => setViews(data.views))
+      .then((data) => {
+        const nextViews = Number(data.views)
+
+        if (!isMounted || !Number.isFinite(nextViews)) {
+          return
+        }
+
+        setViews(Math.max(nextViews - 1, 0))
+        setShowViewIncrement(true)
+        animationFrame = window.requestAnimationFrame(() => {
+          if (isMounted) {
+            setAnimateViewIncrement(true)
+          }
+        })
+
+        countTimeout = setTimeout(() => {
+          if (isMounted) {
+            setViews(nextViews)
+          }
+        }, 850)
+
+        badgeTimeout = setTimeout(() => {
+          if (isMounted) {
+            setAnimateViewIncrement(false)
+            setShowViewIncrement(false)
+          }
+        }, 1400)
+      })
       .catch(() => {})
+
+    return () => {
+      isMounted = false
+
+      if (animationFrame !== null) {
+        window.cancelAnimationFrame(animationFrame)
+      }
+
+      if (countTimeout) {
+        clearTimeout(countTimeout)
+      }
+
+      if (badgeTimeout) {
+        clearTimeout(badgeTimeout)
+      }
+    }
   }, [])
 
   return (
@@ -42,8 +92,23 @@ export default function Portfolio() {
         {/* Introduction */}
         <section className="mb-8">
           {views !== null && (
-            <p className={`text-xs mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
-              {views.toLocaleString()} views
+            <p className={`flex items-center gap-2 text-xs mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+              <span>{views.toLocaleString()} views</span>
+              {showViewIncrement && (
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-semibold transition-all duration-700 ${
+                    theme === "dark"
+                      ? "bg-emerald-500/15 text-emerald-300"
+                      : "bg-emerald-100 text-emerald-700"
+                  } ${
+                    animateViewIncrement
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-1 opacity-0"
+                  }`}
+                >
+                  +1
+                </span>
+              )}
             </p>
           )}
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>

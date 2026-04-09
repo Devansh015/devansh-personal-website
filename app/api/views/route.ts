@@ -3,9 +3,18 @@ import { NextResponse } from "next/server"
 
 const KEY = "page_views"
 
+function normalizeEnvValue(value: string | undefined) {
+  if (!value) {
+    return null
+  }
+
+  const trimmed = value.trim()
+  return trimmed.replace(/^['"]|['"]$/g, "")
+}
+
 function getRedisClient() {
-  const url = process.env.UPSTASH_REDIS_REST_URL
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  const url = normalizeEnvValue(process.env.UPSTASH_REDIS_REST_URL)
+  const token = normalizeEnvValue(process.env.UPSTASH_REDIS_REST_TOKEN)
 
   if (!url || !token) {
     return null
