@@ -20,4 +20,19 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Styling**: Tailwind CSS v4
 - **Deployment**: [Vercel](https://vercel.com/)
 
+---
+## Profile View Counter Setup (Upstash Redis)
+1. Go to [console.upstash.com](https://console.upstash.com/) and create a free Redis database.
+2. In the Upstash dashboard, copy your **REST URL** and **REST Token**.
+3. Add both values to your local `.env.local`:
+
+```bash
+UPSTASH_REDIS_REST_URL=https://...
+UPSTASH_REDIS_REST_TOKEN=...
+```
+
+4. In Vercel, add the same two variables in **Project Settings -> Environment Variables**.
+
+With these variables set, each homepage visit sends `POST /api/views`, increments the Redis counter, and renders the total above the intro text after the fetch resolves.
+
 

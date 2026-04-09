@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import DegreeProgress from "./DegreeProgress"
@@ -8,6 +9,14 @@ import { useTheme } from "./ThemeProvider"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
+  const [views, setViews] = useState<number | null>(null)
+
+  useEffect(() => {
+    fetch("/api/views", { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => setViews(data.views))
+      .catch(() => {})
+  }, [])
 
   return (
     <div
@@ -32,6 +41,11 @@ export default function Portfolio() {
 
         {/* Introduction */}
         <section className="mb-8">
+          {views !== null && (
+            <p className={`text-xs mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
+              {views.toLocaleString()} views
+            </p>
+          )}
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Hi, I&apos;m <TypewriterName/>
           </h2>
