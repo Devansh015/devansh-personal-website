@@ -77,9 +77,30 @@ export default function Portfolio() {
       <div className="max-w-[600px] mx-auto px-5 py-6">
         {/* Header */}
         <header className={`flex justify-between items-center mb-8 pb-4 border-b ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
-          <h1 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-            Devansh Jain
-          </h1>
+          <div className={`flex min-h-6 items-center gap-1.5 text-sm font-medium ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
+            {views !== null ? (
+              <>
+                <span>{views.toLocaleString()} views</span>
+                {showViewIncrement && (
+                  <span
+                    className={`rounded-full px-1.5 py-0.5 text-[9px] font-semibold transition-all duration-700 ${
+                      theme === "dark"
+                        ? "bg-emerald-500/15 text-emerald-300"
+                        : "bg-emerald-100 text-emerald-700"
+                    } ${
+                      animateViewIncrement
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-1 opacity-0"
+                    }`}
+                  >
+                    +1
+                  </span>
+                )}
+              </>
+            ) : (
+              <span>Devansh Jain</span>
+            )}
+          </div>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="https://substack.com/@devanshjaiin" className="hover:underline">blog</Link>
             <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
@@ -91,26 +112,6 @@ export default function Portfolio() {
 
         {/* Introduction */}
         <section className="mb-8">
-          {views !== null && (
-            <p className={`flex items-center gap-2 text-xs mb-3 ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
-              <span>{views.toLocaleString()} views</span>
-              {showViewIncrement && (
-                <span
-                  className={`rounded-full px-2 py-0.5 text-[10px] font-semibold transition-all duration-700 ${
-                    theme === "dark"
-                      ? "bg-emerald-500/15 text-emerald-300"
-                      : "bg-emerald-100 text-emerald-700"
-                  } ${
-                    animateViewIncrement
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-1 opacity-0"
-                  }`}
-                >
-                  +1
-                </span>
-              )}
-            </p>
-          )}
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Hi, I&apos;m <TypewriterName/>
           </h2>
