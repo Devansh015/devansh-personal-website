@@ -77,8 +77,8 @@ export default function Portfolio() {
       <div className="max-w-[600px] mx-auto px-5 py-6">
         {/* Header */}
         <header className={`flex justify-between items-center mb-8 pb-4 border-b ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
-          <div className={`flex min-h-6 items-center gap-1.5 text-sm font-medium ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-            {views !== null ? (
+          <div className={`flex min-h-6 min-w-[88px] items-center gap-1.5 text-sm font-medium ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
+            {views !== null && (
               <>
                 <span>{views.toLocaleString()} views</span>
                 {showViewIncrement && (
@@ -97,8 +97,6 @@ export default function Portfolio() {
                   </span>
                 )}
               </>
-            ) : (
-              <span>Devansh Jain</span>
             )}
           </div>
           <nav className="flex items-center gap-4 text-sm">
