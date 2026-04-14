@@ -102,6 +102,7 @@ export default function Portfolio() {
           <nav className="flex items-center gap-4 text-sm">
             <Link href="https://substack.com/@devanshjaiin" className="hover:underline">blog</Link>
             <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
+            <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
             <button onClick={toggleTheme} className="hover:opacity-70 transition-opacity" aria-label="Toggle theme">
               {theme === "dark" ? "☀️" : "🌙"}
             </button>
@@ -182,7 +183,7 @@ export default function Portfolio() {
             <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
             <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
             <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
-            <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
+            <Link href="https://devpost.com/devanshjain?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" className="hover:underline">devpost</Link>
           </div>
         </section>
         {/* CS Webring */}
