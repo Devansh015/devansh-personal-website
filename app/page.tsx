@@ -189,7 +189,6 @@ export default function Portfolio() {
             <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
             <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
             <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
-            <Link href="https://devpost.com/devanshjain?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" className="hover:underline">devpost</Link>
           </div>
         </section>
         {/* CS Webring */}
