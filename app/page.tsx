@@ -106,7 +106,7 @@ export default function Portfolio() {
             )}
           </div>
           <nav className="flex items-center gap-4 text-sm">
-            <Link href="https://substack.com/@devanshjaiin" className="hover:underline">blog</Link>
+            <Link href="/blog" className="hover:underline">blog</Link>
             <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
             <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
             <button onClick={toggleTheme} className="hover:opacity-70 transition-opacity" aria-label="Toggle theme">
@@ -160,10 +160,10 @@ export default function Portfolio() {
               Writing
             </h3>
             <ul className="space-y-1.5 text-sm">
-              <li><Link href="https://devanshjaiin.substack.com/p/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
-              <li><Link href="https://open.substack.com/pub/devanshjaiin/p/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
-              <li><Link href="https://substack.com/home/post/p-189739560" className="hover:underline">My First Hackathon</Link></li>
-              <li><Link href="https://substack.com/@devanshjaiin" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
+              <li><Link href="/blog/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
+              <li><Link href="/blog/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
+              <li><Link href="/blog/my-first-hackathon" className="hover:underline">My First Hackathon</Link></li>
+              <li><Link href="/blog" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
           <div>
@@ -171,10 +171,10 @@ export default function Portfolio() {
               Projects
             </h3>
             <ul className="space-y-1.5 text-sm">
-              <li><Link href="https://github.com/Devansh015/Amplify" className="hover:underline">Amplify - UofTHacks</Link></li>
-              <li><Link href="https://github.com/Devansh015/Cortex" className="hover:underline">Cortex - HackCanada</Link></li>
-              <li><Link href="https://github.com/Devansh015/UTRA" className="hover:underline">R2Detour - UTRAHacks</Link></li>
-              <li><Link href="https://github.com/Devansh015?tab=repositories" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
+              <li><Link href="/projects/amplify" className="hover:underline">Amplify - UofTHacks</Link></li>
+              <li><Link href="/projects/cortex" className="hover:underline">Cortex - HackCanada</Link></li>
+              <li><Link href="/projects/r2detour" className="hover:underline">R2Detour - UTRAHacks</Link></li>
+              <li><Link href="/projects" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
         </section>
