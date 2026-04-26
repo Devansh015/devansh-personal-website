@@ -136,7 +136,7 @@ export default function Portfolio() {
             {[
               { company: "Jain Consultants", role: "Software Engineering Intern", date: "May – Aug 2025", img: "/image1.png" },
               { company: "OneDrug", role: "Software Engineering Intern", date: "May – Aug 2024", img: "/OneDrug-Photoroom.png" },
-              { company: "Accumine Technologies", role: "Software Engineering Intern", date: "Sep – Dec 2022", img: "/accuminetech-Photoroom.png" },
+              { company: "Accumine Technologies", role: "Software Engineering Intern", date: "May – Aug 2023", img: "/accuminetech-Photoroom.png" },
             ].map((exp) => (
               <div key={exp.company} className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
                 <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-white border flex items-center justify-center overflow-hidden ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
