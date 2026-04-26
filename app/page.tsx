@@ -6,6 +6,7 @@ import Image from "next/image"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
+import { projectPosts } from "./projects/posts"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
@@ -171,10 +172,12 @@ export default function Portfolio() {
               Projects
             </h3>
             <ul className="space-y-1.5 text-sm">
-              <li><Link href="/projects/amplify" className="hover:underline">Amplify - UofTHacks</Link></li>
-              <li><Link href="/projects/cortex" className="hover:underline">Cortex - HackCanada</Link></li>
-              <li><Link href="/projects/r2detour" className="hover:underline">R2Detour - UTRAHacks</Link></li>
-              <li><Link href="/projects" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
+              {projectPosts.slice(0, 3).map((post) => (
+                <li key={post.slug}>
+                  <Link href={post.githubUrl} className="hover:underline">{post.title}</Link>
+                </li>
+              ))}
+              <li><Link href="https://github.com/Devansh015" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
         </section>

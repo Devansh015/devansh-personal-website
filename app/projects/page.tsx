@@ -40,7 +40,7 @@ export default function ProjectsPage() {
           <section className="space-y-5">
             {projectPosts.map((post) => (
               <article key={post.slug} className={`border-b pb-5 ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
-                <Link href={`/projects/${post.slug}`} className="group block">
+                <Link href={post.githubUrl} className="group block">
                   <div className={`mb-1 text-xs uppercase tracking-wide ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>
                     {post.date}
                   </div>
