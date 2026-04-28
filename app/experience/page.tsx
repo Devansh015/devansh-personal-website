@@ -120,9 +120,6 @@ export default function ExperiencePage() {
             <Link href="/" className="hover:underline">Devansh Jain</Link>
           </h1>
           <nav className="text-sm space-x-4">
-            <Link href="/blog" className="hover:underline">
-              blog
-            </Link>
             <Link href="/experience" className="hover:underline font-semibold">
               experience
             </Link>

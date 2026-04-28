@@ -107,7 +107,6 @@ export default function Portfolio() {
             )}
           </div>
           <nav className="flex items-center gap-4 text-sm">
-            <Link href="/blog" className="hover:underline">blog</Link>
             <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
             <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
             <button onClick={toggleTheme} className="hover:opacity-70 transition-opacity" aria-label="Toggle theme">
@@ -164,7 +163,6 @@ export default function Portfolio() {
               <li><Link href="/blog/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
               <li><Link href="/blog/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
               <li><Link href="/blog/my-first-hackathon" className="hover:underline">My First Hackathon</Link></li>
-              <li><Link href="/blog" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
           <div>
@@ -177,7 +175,6 @@ export default function Portfolio() {
                   <Link href={post.githubUrl} className="hover:underline">{post.title}</Link>
                 </li>
               ))}
-              <li><Link href="https://github.com/Devansh015" className={`hover:underline ${theme === "dark" ? "text-gray-500" : "text-gray-400"}`}>more →</Link></li>
             </ul>
           </div>
         </section>
