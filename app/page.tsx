@@ -133,6 +133,7 @@ export default function Portfolio() {
           </h3>
           <div className="space-y-3">
             {[
+              { company: "University of California", role: "Research Assistant", date: "Jan – Apr 2026", img: "/uc-logo.svg" },
               { company: "Jain Consultants", role: "Software Engineering Intern", date: "May – Aug 2025", img: "/image1.png" },
               { company: "OneDrug", role: "Software Engineering Intern", date: "May – Aug 2024", img: "/OneDrug-Photoroom.png" },
               { company: "Accumine Technologies", role: "Software Engineering Intern", date: "May – Aug 2023", img: "/accuminetech-Photoroom.png" },
