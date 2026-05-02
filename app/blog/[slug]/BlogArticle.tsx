@@ -90,7 +90,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           </nav>
         </aside>
 
-        <main className="min-w-0 max-w-3xl">
+        <main className="min-w-0 max-w-2xl">
           <Link
             href="/"
             className={`mb-8 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:${
