@@ -28,7 +28,7 @@ export default function DegreeProgress({ theme }: DegreeProgressProps) {
   return (
     <div className={`text-xs font-mono ${theme === "dark" ? "text-white" : "text-black"}`}>
       <span className="inline-flex items-center gap-1">
-        <span>degree progress</span>
+        <span>degree</span>
         <span>[</span>
         <span 
           className="inline-flex h-2.5 overflow-hidden rounded-sm"
