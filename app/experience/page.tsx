@@ -87,7 +87,7 @@ export default function ExperiencePage() {
       company: "University of California",
       position: "Research Assistant",
       duration: "January 2026 - April 2026",
-      logo: "/Seal_of_University_of_California,_Berkeley.svg",
+      logo: "/UC_Merced_Seal.png",
       description: [],
       technologies: []
     },
