@@ -181,29 +181,32 @@ export default function Portfolio() {
         </section>
 
         {/* Connect */}
-        <section className="mb-6">
-          <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
-            Connect
-          </h3>
+        <section className="mb-6 flex items-start justify-between gap-6">
+          <div className="min-w-0">
+            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
+              Connect
+            </h3>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <Link href="mailto:devansh_jain@outlook.com" className="hover:underline">email</Link>
-            <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
-            <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
-            <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
+              <Link href="mailto:devansh_jain@outlook.com" className="hover:underline">email</Link>
+              <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
+              <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
+              <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
+            </div>
+          </div>
+
+          {/* CS Webring */}
+          <div className="flex shrink-0 items-center gap-2 pt-7" aria-label="CS Webring">
+            <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=prev">&#8592;</a>
+            <a href="https://wluring.com/">
+              <img
+                src={theme === "dark" ? "https://wluring.com/icon.white.svg" : "https://wluring.com/icon.black.svg"}
+                alt="CS Webring"
+                style={{ width: 24, height: "auto", opacity: 0.8 }}
+              />
+            </a>
+            <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=next">&#8594;</a>
           </div>
         </section>
-        {/* CS Webring */}
-        <div className="mb-6 flex items-center gap-2">
-          <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=prev">&#8592;</a>
-          <a href="https://wluring.com/">
-            <img
-              src={theme === "dark" ? "https://wluring.com/icon.white.svg" : "https://wluring.com/icon.black.svg"}
-              alt="CS Webring"
-              style={{ width: 24, height: "auto", opacity: 0.8 }}
-            />
-          </a>
-          <a href="https://wluring.com/go?site=https%3A%2F%2Fdevanshjain.me%2F&nav=next">&#8594;</a>
-        </div>
 
         {/* Footer */}
         <footer className={`pt-4 border-t text-xs ${theme === "dark" ? "border-gray-800 text-gray-500" : "border-gray-200 text-gray-400"}`}>
