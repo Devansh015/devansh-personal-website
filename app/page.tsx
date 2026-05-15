@@ -166,7 +166,7 @@ export default function Portfolio() {
               <li><Link href="/blog/my-first-hackathon" className="hover:underline">My First Hackathon</Link></li>
             </ul>
           </div>
-          <div>
+          <div className="justify-self-end text-right">
             <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
               Projects
             </h3>
