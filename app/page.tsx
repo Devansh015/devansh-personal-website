@@ -120,9 +120,20 @@ export default function Portfolio() {
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Hi, I&apos;m <TypewriterName/>
           </h2>
-          <p className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-            CS @ Wilfrid Laurier University · Full-Stack &amp; AI/ML · Film &amp; Basketball 🏀
-          </p>
+          <div className={`mb-4 border-l pl-4 py-1 ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
+            <h3 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
+              About
+            </h3>
+            <p className={`max-w-[540px] text-sm leading-6 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+              Computer Science student at Wilfrid Laurier University building full-stack products and AI/ML systems, shaped by an interest in film, basketball, and clean interfaces.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
+              <span>Full-stack</span>
+              <span>AI/ML</span>
+              <span>Film</span>
+              <span>Basketball</span>
+            </div>
+          </div>
           <DegreeProgress theme={theme} />
         </section>
 
