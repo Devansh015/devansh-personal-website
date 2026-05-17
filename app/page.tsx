@@ -122,7 +122,7 @@ export default function Portfolio() {
           </h2>
           <div className={`mb-4 border-l pl-4 py-1 ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
             <h3 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
-              About
+              About Me
             </h3>
             <p className={`max-w-[540px] text-sm leading-6 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
               Computer Science student at Wilfrid Laurier University building full-stack products and AI/ML systems, shaped by an interest in film, basketball, and clean interfaces.
@@ -144,7 +144,7 @@ export default function Portfolio() {
           </h3>
           <div className="space-y-3">
             {[
-              { company: "University of California", role: "Research Assistant", date: "Jan – Apr 2026", img: "/UC_Merced_Seal.png" },
+              { company: "University of California Merced", role: "Research Assistant", date: "Jan – Apr 2026", img: "/UC_Merced_Seal.png" },
               { company: "Jain Consultants", role: "Software Engineering Intern", date: "May – Aug 2025", img: "/image1.png" },
               { company: "OneDrug", role: "Software Engineering Intern", date: "May – Aug 2024", img: "/OneDrug-Photoroom.png" },
               { company: "Accumine Technologies", role: "Software Engineering Intern", date: "May – Aug 2023", img: "/accuminetech-Photoroom.png" },
