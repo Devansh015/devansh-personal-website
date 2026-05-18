@@ -125,7 +125,9 @@ export default function Portfolio() {
               About Me
             </h3>
             <p className={`max-w-[540px] text-sm leading-6 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-              Computer Science student at Wilfrid Laurier University building full-stack products and AI/ML systems, shaped by an interest in film, basketball, and clean interfaces.
+              Third year computer science student at Wilfrid Laurier University
+              <br />
+              Interested in full-stack development, AI/ML, film, and basketball.
             </p>
             <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
               <span>Full-stack</span>
