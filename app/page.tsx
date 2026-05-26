@@ -3,29 +3,16 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
 import { projectPosts } from "./projects/posts"
-
-const connectLinks = [
-  { href: "mailto:devansh_jain@outlook.com", label: "Email", Icon: Mail },
-  { href: "https://github.com/Devansh015", label: "GitHub", Icon: Github },
-  { href: "https://linkedin.com/in/devanshj15", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://x.com/__devanshjain", label: "Twitter", Icon: Twitter },
-]
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
   const [views, setViews] = useState<number | null>(null)
   const [showViewIncrement, setShowViewIncrement] = useState(false)
   const [animateViewIncrement, setAnimateViewIncrement] = useState(false)
-  const connectLinkClass = `inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors ${
-    theme === "dark"
-      ? "text-gray-400 hover:bg-gray-900 hover:text-white"
-      : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
-  }`
 
   useEffect(() => {
     let animationFrame: number | null = null
@@ -212,12 +199,11 @@ export default function Portfolio() {
             <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
               Connect
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {connectLinks.map(({ href, label, Icon }) => (
-                <Link key={label} href={href} className={connectLinkClass} aria-label={label} title={label}>
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              ))}
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              <Link href="mailto:devansh_jain@outlook.com" className="hover:underline">email</Link>
+              <Link href="https://github.com/Devansh015" className="hover:underline">github</Link>
+              <Link href="https://linkedin.com/in/devanshj15" className="hover:underline">linkedin</Link>
+              <Link href="https://x.com/__devanshjain" className="hover:underline">twitter</Link>
             </div>
           </div>
 
