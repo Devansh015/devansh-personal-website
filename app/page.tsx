@@ -6,7 +6,6 @@ import Image from "next/image"
 import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
-import { projectPosts } from "./projects/posts"
 
 export default function Portfolio() {
   const { theme, toggleTheme } = useTheme()
@@ -164,32 +163,6 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Posts & Projects Grid */}
-        <section className="mb-8 grid grid-cols-2 gap-4">
-          <div>
-            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
-              Writing
-            </h3>
-            <ul className="space-y-1.5 text-sm">
-              <li><Link href="/blog/interning-at-an-engineering-firm" className="hover:underline">Interning at an Engineering Firm</Link></li>
-              <li><Link href="/blog/what-university-doesnt-teach-you" className="hover:underline">What Uni Doesn&apos;t Teach You</Link></li>
-              <li><Link href="/blog/my-first-hackathon" className="hover:underline">My First Hackathon</Link></li>
-            </ul>
-          </div>
-          <div className="justify-self-end text-right">
-            <h3 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${theme === "dark" ? "text-gray-500" : "text-black"}`}>
-              Projects
-            </h3>
-            <ul className="space-y-1.5 text-sm">
-              {projectPosts.slice(0, 3).map((post) => (
-                <li key={post.slug}>
-                  <Link href={post.githubUrl} className="hover:underline">{post.title}</Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
