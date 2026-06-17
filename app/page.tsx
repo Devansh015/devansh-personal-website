@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { ArrowDownRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import DegreeProgress from "./DegreeProgress"
@@ -12,6 +13,12 @@ export default function Portfolio() {
   const [views, setViews] = useState<number | null>(null)
   const [showViewIncrement, setShowViewIncrement] = useState(false)
   const [animateViewIncrement, setAnimateViewIncrement] = useState(false)
+  const aboutLines = [
+    "Third-year Computer Science student at Wilfrid Laurier University.",
+    "Currently a Research Assistant at the University of California Merced.",
+    "Interested in full-stack engineering, and AI/ML development",
+    "In my freetime I enjoy the gym, basketball, watching new movies, and trying new food spots."
+  ]
 
   useEffect(() => {
     let animationFrame: number | null = null
@@ -119,21 +126,18 @@ export default function Portfolio() {
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
             Hi, I&apos;m <TypewriterName/>
           </h2>
-          <div className={`mb-4 border-l pl-4 py-1 ${theme === "dark" ? "border-gray-800" : "border-gray-200"}`}>
-            <h3 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
+          <div className="mb-4 py-1">
+            <h3 className="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-500">
               About Me
             </h3>
-            <p className={`max-w-[540px] text-sm leading-6 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-              Third year computer science student at Wilfrid Laurier University
-              <br />
-              Interested in full-stack development, AI/ML, film, and basketball.
-            </p>
-            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
-              <span>Full-stack</span>
-              <span>AI/ML</span>
-              <span>Film</span>
-              <span>Basketball</span>
-            </div>
+            <ul className={`max-w-[560px] space-y-2 text-[15px] leading-7 ${theme === "dark" ? "text-[#e5dccd]" : "text-gray-700"}`}>
+              {aboutLines.map((line) => (
+                <li key={line} className="flex items-start gap-1.5">
+                  <ArrowDownRight aria-hidden="true" className="mt-[7px] h-3.5 w-3.5 shrink-0 text-gray-500" strokeWidth={2} />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <DegreeProgress theme={theme} />
         </section>
