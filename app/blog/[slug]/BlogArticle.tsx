@@ -52,7 +52,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        isDark ? "bg-[#0f0f0f] text-[#d4d4d4]" : "bg-white text-gray-900"
+        isDark ? "dark-starfield bg-black text-[#d4d4d4]" : "bg-white text-gray-900"
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 px-5 py-8 lg:grid-cols-[200px_1fr] lg:gap-16 lg:px-8">

@@ -133,7 +133,7 @@ export default function ExperiencePage() {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 font-sans ${
-        theme === "dark" ? "bg-[#0f0f0f] text-[#d4d4d4]" : "bg-white text-gray-900"
+        theme === "dark" ? "dark-starfield bg-black text-[#d4d4d4]" : "bg-white text-gray-900"
       }`}
     >
       <div className="max-w-[720px] mx-auto px-6 py-8">
