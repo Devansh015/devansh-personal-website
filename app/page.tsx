@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { ArrowDownRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import DegreeProgress from "./DegreeProgress"
 import TypewriterName from "./TypewriterName"
 import { useTheme } from "./ThemeProvider"
 
@@ -113,6 +112,7 @@ export default function Portfolio() {
             )}
           </div>
           <nav className="flex items-center gap-4 text-sm">
+            <Link href="https://github.com/Devansh015?tab=repositories" className="hover:underline">projects</Link>
             <Link href="https://letterboxd.com/Devansh015/" className="hover:underline">letterboxd</Link>
             <Link href="/Devansh_JainResume.pdf" className="hover:underline">resume</Link>
             <button onClick={toggleTheme} className="hover:opacity-70 transition-opacity" aria-label="Toggle theme">
@@ -139,7 +139,6 @@ export default function Portfolio() {
               ))}
             </ul>
           </div>
-          <DegreeProgress theme={theme} />
         </section>
 
         {/* Experience */}
