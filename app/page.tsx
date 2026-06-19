@@ -87,7 +87,7 @@ export default function Portfolio() {
   return (
     <div
       className={`min-h-screen transition-colors duration-300 font-sans ${
-        theme === "dark" ? "bg-[#0f0f0f] text-[#d4d4d4]" : "bg-white text-gray-900"
+        theme === "dark" ? "dark-starfield bg-black text-[#d4d4d4]" : "bg-white text-gray-900"
       }`}
     >
       <div className="max-w-[600px] mx-auto px-5 py-6">
@@ -130,7 +130,7 @@ export default function Portfolio() {
             <h3 className="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-500">
               About Me
             </h3>
-            <ul className={`max-w-[560px] space-y-2 text-[15px] leading-7 ${theme === "dark" ? "text-[#e5dccd]" : "text-gray-700"}`}>
+            <ul className={`max-w-[560px] space-y-2 text-[15px] leading-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
               {aboutLines.map((line) => (
                 <li key={line} className="flex items-start gap-1.5">
                   <ArrowDownRight aria-hidden="true" className="mt-[7px] h-3.5 w-3.5 shrink-0 text-gray-500" strokeWidth={2} />
