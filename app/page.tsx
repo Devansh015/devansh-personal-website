@@ -148,10 +148,10 @@ export default function Portfolio() {
           </h3>
           <div className="space-y-3">
             {[
-              { company: "University of California Merced", role: "Research Assistant", date: "Jan – Apr 2026", img: "/UC_Merced_Seal.png" },
-              { company: "Jain Consultants", role: "Software Engineering Intern", date: "May – Aug 2025", img: "/image1.png" },
-              { company: "OneDrug", role: "Software Engineering Intern", date: "May – Aug 2024", img: "/OneDrug-Photoroom.png" },
-              { company: "Accumine Technologies", role: "Software Engineering Intern", date: "May – Aug 2023", img: "/accuminetech-Photoroom.png" },
+              { company: "University of California Merced", role: "Research Assistant", date: "Jan 2026 – Apr 2026", img: "/UC_Merced_Seal.png" },
+              { company: "Jain Consultants", role: "Software Engineering Intern", date: "May 2025 – Aug 2025", img: "/image1.png" },
+              { company: "OneDrug", role: "Software Engineering Intern", date: "May 2024 – Aug 2024", img: "/OneDrug-Photoroom.png" },
+              { company: "Accumine Technologies", role: "Software Engineering Intern", date: "May 2023 – Aug 2023", img: "/accuminetech-Photoroom.png" },
             ].map((exp) => (
               <div key={exp.company} className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${theme === "dark" ? "hover:bg-gray-900/50" : "hover:bg-gray-50"}`}>
                 <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-white border flex items-center justify-center overflow-hidden ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
