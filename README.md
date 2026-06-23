@@ -2,7 +2,9 @@
 
 Welcome to my personal website!  
 This sites main purpose is to showcase my projects, share my experiences, and provide ways to connect with me!!
-<img width="986" height="953" alt="image" src="https://github.com/user-attachments/assets/a97361b4-7ff8-470e-9841-4c1089089123" />
+<img width="1679" height="956" alt="image" src="https://github.com/user-attachments/assets/dff9b15a-cfdb-4f83-9b47-09de68a1feb4" />
+
+
 
 
 
