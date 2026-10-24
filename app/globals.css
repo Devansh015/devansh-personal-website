@@ -48,6 +48,99 @@ body {
   z-index: 1;
 }
 
+.interstellar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.96);
+  transition: opacity 900ms ease;
+}
+
+.interstellar-overlay.is-visible { opacity: 1; }
+
+.interstellar-scene { width: 100%; height: 100%; }
+
+.interstellar-viewport { position: absolute; inset: 0; }
+
+.interstellar-art {
+  position: absolute;
+  left: 74%;
+  top: 45%;
+  width: min(72vw, 920px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  mask-image: radial-gradient(ellipse at center, #000 38%, transparent 72%);
+}
+
+.endurance-flight {
+  position: absolute;
+  left: 30%;
+  top: 55%;
+  width: clamp(90px, 16vw, 200px);
+  transform: translate(-50%, -50%);
+}
+
+.endurance-ship {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.8) contrast(1.12);
+}
+
+.is-visible .interstellar-scene { animation: interstellar-arrive 2s ease-out both; }
+.is-visible .endurance-flight { animation: endurance-drift 10s cubic-bezier(0.35, 0, 0.7, 1) both; }
+.is-visible .endurance-ship { animation: endurance-spin 35s linear infinite; }
+
+.interstellar-caption {
+  position: absolute;
+  left: 74%;
+  top: calc(45% + min(22vw, 280px));
+  width: max-content;
+  max-width: 48vw;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #edddc5;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.5em;
+}
+
+.interstellar-caption span {
+  display: block;
+  margin-top: 12px;
+  color: #a3998e;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+@keyframes interstellar-arrive {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes endurance-drift {
+  0% { left: -15%; top: 62%; opacity: 0; transform: translate(-50%, -50%) scale(1); }
+  12% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { left: 74%; top: 45%; opacity: 0; transform: translate(-50%, -50%) scale(0.08); }
+}
+
+@keyframes endurance-spin {
+  from { transform: rotate(-14deg); }
+  to { transform: rotate(346deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interstellar-overlay { transition: none; }
+  .is-visible .interstellar-scene,
+  .is-visible .endurance-flight,
+  .is-visible .endurance-ship { animation: none; }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

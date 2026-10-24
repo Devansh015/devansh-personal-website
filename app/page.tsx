@@ -5,6 +5,7 @@ import { ArrowDownRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import TypewriterName from "./TypewriterName"
+import Interstellar from "./Interstellar"
 import { useTheme } from "./ThemeProvider"
 
 export default function Portfolio() {
@@ -124,7 +125,7 @@ export default function Portfolio() {
         {/* Introduction */}
         <section className="mb-8">
           <h2 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
-            Hi, I&apos;m <TypewriterName/>
+            Hi, I&apos;m <TypewriterName/><Interstellar />
           </h2>
           <div className="mb-4 py-1">
             <h3 className="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-500">
