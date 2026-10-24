@@ -148,6 +148,7 @@ export default function Portfolio() {
           </h3>
           <div className="space-y-3">
             {[
+              { company: "TD Bank", role: "DevOps Engineer Intern", date: "Sep 2026 – Dec 2026", img: "/td-bank-logo.png" },
               { company: "University of California Merced", role: "Research Assistant", date: "May 2026 – Aug 2026", img: "/UC_Merced_Seal.png" },
               { company: "Jain Consultants", role: "Software Engineering Intern", date: "May 2025 – Aug 2025", img: "/image1.png" },
               { company: "OneDrug", role: "Software Engineering Intern", date: "May 2024 – Aug 2024", img: "/OneDrug-Photoroom.png" },
@@ -157,10 +158,10 @@ export default function Portfolio() {
                 <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-white border flex items-center justify-center overflow-hidden ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}>
                   <Image src={exp.img} alt={exp.company} width={32} height={32} className="object-contain" />
                 </div>
-                <div className="flex-grow min-w-0">
+                <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
                     <p className={`font-medium text-sm truncate ${theme === "dark" ? "text-white" : "text-gray-900"}`}>{exp.company}</p>
-                    <span className={`text-xs flex-shrink-0 ${theme === "dark" ? "text-white" : "text-black"}`}>{exp.date}</span>
+                    <span className={`ml-auto text-right text-xs tabular-nums whitespace-nowrap flex-shrink-0 ${theme === "dark" ? "text-white" : "text-black"}`}>{exp.date}</span>
                   </div>
                   <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>{exp.role}</p>
                 </div>

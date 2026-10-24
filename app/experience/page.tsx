@@ -42,7 +42,7 @@ const ExperienceCard = memo(({
           </p>
         </div>
       </div>
-      <div className={`text-sm ${theme === "dark" ? "text-white" : "text-black"} sm:text-right`}>
+      <div className={`text-sm tabular-nums shrink-0 ${theme === "dark" ? "text-white" : "text-black"} sm:ml-auto sm:text-right`}>
         <p className="font-medium">{experience.duration}</p>
         {experience.location && <p>{experience.location}</p>}
       </div>
@@ -83,6 +83,14 @@ export default function ExperiencePage() {
   const { theme, toggleTheme } = useTheme()
 
   const experiences = useMemo(() => [
+    {
+      company: "TD Bank",
+      position: "DevOps Engineer Intern",
+      duration: "September 2026 - December 2026",
+      logo: "/td-bank-logo.png",
+      description: [],
+      technologies: []
+    },
     {
       company: "University of California",
       position: "Research Assistant",
