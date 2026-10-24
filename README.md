@@ -24,4 +24,17 @@ This sites main purpose is to showcase my projects, share my experiences, and pr
 - **Styling**: Tailwind CSS v4
 - **Deployment**: [Vercel](https://vercel.com/)
 
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000. Development output uses `.next-dev` so running
+`npm run build` does not overwrite a running development server's files.
+
+To run the production version locally, run `npm run build` followed by
+`npm start` after stopping the development server.
+
 ---
